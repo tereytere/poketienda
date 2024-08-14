@@ -7,8 +7,7 @@ import useSinglePokemon from "../hooks/useSinglePokemon";
 export default function ProductList() {
     const allPokemon = usePokemons() || [];
 
-    const pokemonUrls = allPokemon.map((pokemon) => pokemon[1]);
-    const products = useSinglePokemon(pokemonUrls);
+    const products = useSinglePokemon(allPokemon);
 
 
     const [cart, setCart] = useState([]);

@@ -4,15 +4,14 @@ const usePokemons = () => {
     const [allPokemon, setAllPokemon] = useState();
 
     useEffect(() => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=13`)
+        fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=88`)
             .then((res) => res.json())
             .then((data) => {
-                let pokemons = [];
-                data.results.forEach((r) => {
-                    pokemons.push([r.name, r.url]);
-                });
-
+                const pokemons = data.results.map((r) => [r.name, r.url]);
                 setAllPokemon(pokemons);
+            })
+            .catch((error) => {
+                console.error("Error fetching Pokémon data:", error);
             });
     }, []);
 
