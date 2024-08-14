@@ -6,12 +6,13 @@ const usePokemons = () => {
     useEffect(() => {
         fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=13`)
             .then((res) => res.json())
-            .then((res) => {
+            .then((data) => {
                 let pokemons = [];
-                res.results.forEach((r) => {
+                data.results.forEach((r) => {
                     pokemons.push([r.name, r.url]);
                 });
-                setAllPokemon(pokemons.sort());
+
+                setAllPokemon(pokemons);
             });
     }, []);
 

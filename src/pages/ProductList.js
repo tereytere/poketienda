@@ -10,6 +10,7 @@ export default function ProductList() {
     const pokemonUrls = allPokemon.map((pokemon) => pokemon[1]);
     const products = useSinglePokemon(pokemonUrls);
 
+
     const [cart, setCart] = useState([]);
     const [total, setTotal] = useState(0);
 
