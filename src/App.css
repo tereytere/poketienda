@@ -3,6 +3,7 @@
   position: sticky;
   top: 0;
   background-color: peachpuff;
+  z-index: 3;
 
   & ul {
     list-style: none;
@@ -38,6 +39,25 @@
   gap: 20px;
 }
 
+.oferta {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+
+  & .item {
+    background-color: lightgreen;
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 200px;
+    width: 200px;
+
+    & img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
 .product {
   flex: 0 1 200px;
   padding: 10px;
@@ -49,11 +69,7 @@
 }
 
 .eliminar {
-  width: 100px;
-  background-color: red;
-  margin-left: 10px;
-  padding: 5px;
-  border-radius: 5px;
+  margin: 10px;
 }
 
 /* Contacto */

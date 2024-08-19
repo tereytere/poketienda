@@ -4,7 +4,7 @@ const usePokemons = () => {
     const [allPokemon, setAllPokemon] = useState();
 
     useEffect(() => {
-        fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=88`)
+        fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=13`)
             .then((res) => res.json())
             .then((data) => {
                 const pokemons = data.results.map((r) => [r.name, r.url]);
